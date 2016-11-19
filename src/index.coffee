@@ -27,7 +27,7 @@ Qiita.setRequester (method, api, params) ->
       )
   fetching
   .then (res) ->
-    if parseInt(res.statusCode, 10) >= 400
+    if parseInt(res.status, 10) >= 400
       error = new Error 'qiita-js request error:' + method + ' ' +  url + ' ' + JSON.stringify(params) + '' + '\n' + res.body.error
       return Promise.reject(error)
     # res.body._header = res.header
