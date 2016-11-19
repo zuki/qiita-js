@@ -31,6 +31,6 @@ Qiita.setRequester (method, api, params) ->
       error = new Error 'qiita-js request error:' + method + ' ' +  url + ' ' + JSON.stringify(params) + '' + '\n' + res.body.error
       return Promise.reject(error)
     # res.body._header = res.header
-    res.json()
+    res
 
 module.exports = Qiita
